@@ -9,6 +9,13 @@
  */
 export function formatDate(date: Date): string {
     // 請在此處寫下你的程式碼
+    const formattedDate = date.toLocaleDateString(undefined, {
+        year: 'numeric', 
+        month: '2-digit', 
+        day: '2-digit'
+    });
+
+    return formattedDate.replace(/\//g, '-');
 }
 
 /**
@@ -22,4 +29,5 @@ export function formatDate(date: Date): string {
  */
 export function roundNumber(num: number): number {
     // 請在此處寫下你的程式碼
+    return Math.round(num)
 }
