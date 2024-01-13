@@ -9,13 +9,11 @@
  */
 export function formatDate(date: Date): string {
     // 請在此處寫下你的程式碼
-    const formattedDate = date.toLocaleDateString(undefined, {
-        year: 'numeric', 
-        month: '2-digit', 
-        day: '2-digit'
-    });
-
-    return formattedDate.replace(/\//g, '-');
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    
+    return `${year}-${month}-${day}`;
 }
 
 /**
